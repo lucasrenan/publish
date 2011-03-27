@@ -1,3 +1,12 @@
+#generates coverage report
+begin
+  require 'simplecov'
+  SimpleCov.start('rails') do
+    add_filter '/vendor/'
+  end
+rescue
+end
+
 # Configure Rails Envinronment
 ENV["RAILS_ENV"] = "test"
 
@@ -16,7 +25,23 @@ Capybara.default_driver   = :rack_test
 Capybara.default_selector = :css
 
 # Run any available migration
-ActiveRecord::Migrator.migrate File.expand_path("../dummy/db/migrate/", __FILE__)
+#ActiveRecord::Migrator.migrate File.expand_path("../dummy/db/migrate/", __FILE__)
 
 # Load support files
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
+
+# Load factories
+Dir["#{File.dirname(__FILE__)}/factories/*.rb"].each { |f| require f }
+
+
+class ActiveSupport::TestCase
+  teardown do
+    Mongoid.master.collections.select {|c| c.name !~ /system/ }.each(&:drop)
+  end
+end
+
+class ActionController::TestCase
+  teardown do
+    Mongoid.master.collections.select {|c| c.name !~ /system/ }.each(&:drop)
+  end
+end
