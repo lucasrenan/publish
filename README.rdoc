@@ -1,3 +1,40 @@
-= Publish
+== Publish
 
-This project rocks and uses MIT-LICENSE.
+Publish is a gem that adds the common functionality to publish and unpublish in the rails models.
+Now, supports just Mongoid. Support to Activerecord is comming soon.
+
+== Installation
+
+Add to Gemfile
+
+  gem 'publish', :git => 'git://github.com/lucasrenan/publish.git'
+
+Then run
+
+  bundle install
+
+== Getting started
+
+
+Include Publish Module to your model
+
+  class Post
+    include Mongoid::Document
+    include Mongoid::Publish
+
+    field :title
+    field :text
+  end
+  
+  Post.published.count  #0
+  
+  p = Post.new
+  p.published?    #false
+  p.published_at  #nil
+  
+  p.published = true
+  p.save
+  
+  p.published?    #true
+  
+  Post.published.count  #1
