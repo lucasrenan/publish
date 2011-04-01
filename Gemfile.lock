@@ -3,7 +3,7 @@ PATH
   specs:
     publish (0.0.1)
       bson_ext (~> 1.2.4)
-      mongoid (~> 2.0.0.rc.8)
+      mongoid (~> 2.0.0)
 
 GEM
   remote: http://rubygems.org/
@@ -75,7 +75,7 @@ GEM
     minitest (2.0.2)
     mongo (1.2.4)
       bson (>= 1.2.4)
-    mongoid (2.0.0.rc.8)
+    mongoid (2.0.0)
       activemodel (~> 3.0)
       mongo (~> 1.2)
       tzinfo (~> 0.3.22)
