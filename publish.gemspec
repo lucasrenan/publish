@@ -3,8 +3,8 @@ require "mongoid/version"
 
 Gem::Specification.new do |s|
   s.name = "publish"
-  s.summary = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary = "Adds the functionality to publish/unpublish"
+  s.description = "Adds the functionality to publish/unpublish"
   #s.files = Dir["{app,lib,config}/**/*"] + ["MIT-LICENSE", "Rakefile", "Gemfile", "README.rdoc"]
   s.version = Mongoid::Publish::VERSION
   s.platform = Gem::Platform::RUBY

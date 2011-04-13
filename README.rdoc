@@ -7,7 +7,7 @@ Now, supports just Mongoid. Support to Activerecord is comming soon.
 
 Add to Gemfile
 
-  gem 'publish', :git => 'git://github.com/lucasrenan/publish.git'
+  gem 'publish', '0.0.1'
 
 Then run
 
