@@ -32,9 +32,10 @@ Include Publish Module to your model
   p.published?    #false
   p.published_at  #nil
   
-  p.published = true
-  p.save
+  p.publish! #p.published = true
   
   p.published?    #true
   
   Post.published.count  #1
+  
+  p.publication_status #Date.today or 'draft'
