@@ -25,6 +25,10 @@ module Mongoid
         self.published_at = Date.today
         self.save
       end
+      
+      def publication_status
+        self.published? ? self.published_at : "draft"
+      end
 
       private
       def set_published_at

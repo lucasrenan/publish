@@ -49,11 +49,14 @@ class PostTest < ActiveSupport::TestCase
   
   test "should concat with criteria methods" do
     Factory.create(:post, :published => true, :title => "normal post")
-    Factory.create(:post, :published => true, :title => "another normal post")
     Factory.create(:post, :published => true, :title => "my special post")
     
     assert_equal Post.where(:title => /special/).published.count, 1
     assert_equal Post.published.where(:title => /special/).count, 1
+  end
+  
+  test "should return publication status as draft if is not published yet" do
+    assert_equal Post.last.publication_status, "draft"
   end
 
 end
