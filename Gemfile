@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-gem "rails", "3.0.5"
+gem "rails", "3.0.9"
 gem "capybara", ">= 0.4.0"
 
 gem 'simplecov', :require => false

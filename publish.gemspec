@@ -20,6 +20,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   #s.add_dependency 'activesupport', '~> 3.0.5'
-  s.add_dependency 'mongoid', '~> 2.0.1'
-  s.add_dependency 'bson_ext', '~> 1.3.0'
+  s.add_dependency 'mongoid', '~> 2.0.2'
+  s.add_dependency 'bson_ext', '~> 1.3'
 end
