@@ -58,5 +58,11 @@ class PostTest < ActiveSupport::TestCase
   test "should return publication status as draft if is not published yet" do
     assert_equal Post.last.publication_status, "draft"
   end
+  
+  test "should return published at date if is published" do
+    @post.publish!
+    
+    assert_equal Post.last.publication_status, Date.today
+  end
 
 end
