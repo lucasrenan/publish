@@ -46,5 +46,14 @@ class PostTest < ActiveSupport::TestCase
     assert post.published?
     assert_equal Post.published.size, 1
   end
+  
+  test "should concat with criteria methods" do
+    Factory.create(:post, :published => true, :title => "normal post")
+    Factory.create(:post, :published => true, :title => "another normal post")
+    Factory.create(:post, :published => true, :title => "my special post")
+    
+    assert_equal Post.where(:title => /special/).published.count, 1
+    assert_equal Post.published.where(:title => /special/).count, 1
+  end
 
 end
