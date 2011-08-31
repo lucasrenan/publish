@@ -3,7 +3,6 @@ PATH
   specs:
     publish (0.0.1)
       bson_ext (~> 1.3)
-      mongoid (~> 2.0.1)
 
 GEM
   remote: http://rubygems.org/
@@ -127,6 +126,7 @@ DEPENDENCIES
   colorific
   factory_girl_rails
   ffaker
+  mongoid
   publish!
   rails (= 3.0.9)
   simplecov
