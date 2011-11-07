@@ -30,10 +30,6 @@ Capybara.default_selector = :css
 # Load support files
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
-# Load factories
-Dir["#{File.dirname(__FILE__)}/factories/*.rb"].each { |f| require f }
-
-
 class ActiveSupport::TestCase
   teardown do
     Mongoid.master.collections.select {|c| c.name !~ /system/ }.each(&:drop)
