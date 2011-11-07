@@ -1,5 +1,5 @@
 $:.push File.expand_path("../lib", __FILE__)
-require "mongoid/version"
+require "mongoid/publish/version"
 
 Gem::Specification.new do |s|
   s.name = "publish"
