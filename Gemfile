@@ -1,7 +1,9 @@
 source "http://rubygems.org"
 
 gem "rails", "3.0.10"
-gem "capybara", ">= 0.4.0"
+gem "capybara", ">= 1.1.1"
+
+gem "bson_ext"
 
 gem "simplecov", :require => false
 gem "factory_girl_rails"
