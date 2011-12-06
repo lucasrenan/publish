@@ -38,6 +38,14 @@ class PostTest < ActiveSupport::TestCase
     assert_equal Post.published.size, 2
   end
 
+  test "should return orderly published posts" do
+    Factory.create(:post, :title => "2", :published => true, :published_at => 1.month.ago)
+    Factory.create(:post, :title => "3", :published => true, :published_at => 1.year.ago)
+    Factory.create(:post, :title => "1", :published => true, :published_at => 1.day.ago)
+
+    assert_equal Post.published_and_orderly.map(&:title), ["1", "2", "3"]
+  end
+
   test "should publish a post" do
     post = Factory.build(:post)
     post.publish!
