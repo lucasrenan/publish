@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 
-gem "rails", "3.0.11"
-gem "capybara", ">= 1.1.1"
+gem "rails", "3.0.12"
+gem "capybara"
 
 gem "bson_ext"
 

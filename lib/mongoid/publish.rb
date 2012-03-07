@@ -13,11 +13,8 @@ module Mongoid
     end
 
     def published?
-      if self.published && self.published_at && self.published_at <= Date.today
-        true
-      else
-        false
-      end
+      return true if self.published && self.published_at && self.published_at <= Date.today
+      false
     end
 
     def publish!
