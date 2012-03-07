@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    publish (0.0.5)
+    publish (0.0.6)
       mongoid (>= 2.0)
 
 GEM
