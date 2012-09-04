@@ -1,7 +1,6 @@
 == Publish
 
-Publish is a gem that adds the common functionality to publish and unpublish in the rails models.
-Now, supports just Mongoid. Support to Activerecord is comming soon.
+Publish is a gem that adds the common functionality to publish (or set as draft) a document using Mongoid.
 
 == Installation
 
