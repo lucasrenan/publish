@@ -1,23 +1,28 @@
 $:.push File.expand_path("../lib", __FILE__)
 require "mongoid/publish/version"
 
-Gem::Specification.new do |s|
-  s.name = "publish"
-  s.summary = "Adds the functionality to publish/unpublish"
-  s.description = "Adds the functionality to publish/unpublish"
-  #s.files = Dir["{app,lib,config}/**/*"] + ["MIT-LICENSE", "Rakefile", "Gemfile", "README.rdoc"]
-  s.version = Mongoid::Publish::VERSION
-  s.platform = Gem::Platform::RUBY
-  s.authors = ["Lucas Renan", "Marco Singer"]
-  s.email = ["contato@lucasrenan.com", "markaum@gmail.com"]
-  s.homepage = "https://github.com/lucasrenan/publish"
+Gem::Specification.new do |gem|
 
-  s.rubyforge_project = "publish"
+  gem.name          = "publish"
+  gem.authors       = ["Lucas Renan", "Tiago Rafael Godinho", "Marco Singer"]
+  gem.email         = ["contato@lucasrenan.com", "tiagogodinho3@gmail.com", "markaum@gmail.com"]
+  gem.description   = %q{Adds the functionality to publish/unpublish mongoid docs}
+  gem.summary       = %q{Adds the functionality to publish/unpublish mongoid docs}
+  gem.homepage      = "https://github.com/lucasrenan/publish"
 
-  s.files = `git ls-files`.split("\n")
-  s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  s.require_paths = ["lib"]
+  gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  gem.files         = `git ls-files`.split("\n")
+  gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  gem.require_paths = ["lib"]
+  gem.version       = Mongoid::Publish::VERSION
+  gem.platform      = Gem::Platform::RUBY
 
-  s.add_dependency "mongoid", ">= 2.0"
+
+  gem.add_dependency "mongoid", "~> 3.0.0"
+
+  gem.add_development_dependency "rails",              "~> 3.2.0"
+  gem.add_development_dependency "rake",               "~> 0.9"
+  gem.add_development_dependency "rspec-rails",        "~> 2.10.1"
+  gem.add_development_dependency "simplecov",          "~> 0.6.1"
+  gem.add_development_dependency "capybara",           "~> 1.1.2"
 end
