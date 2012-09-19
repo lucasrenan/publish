@@ -9,3 +9,4 @@ coverage
 rcov
 .rvmrc
 *.gem
+Gemfile.lock
