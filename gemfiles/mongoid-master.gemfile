@@ -2,4 +2,7 @@ source 'https://rubygems.org'
 
 gem 'mongoid', github: 'mongoid/mongoid'
 
+gem 'factory_girl_rails', '~> 3.5.0'
+gem 'colorific',          '~> 1.0.2'
+
 gemspec path: '../'
