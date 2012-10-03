@@ -12,6 +12,8 @@ module Mongoid
       before_save :set_published_at
     end
 
+    include Mongoid::Publish::Callbacks
+
     def published?
       return true if self.published && self.published_at && self.published_at <= Date.today
       false
