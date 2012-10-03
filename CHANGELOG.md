@@ -6,7 +6,9 @@
 
 * Now supports mongoid master
 
-* Callbacks (after_publish, before_publish).
+## 0.1.1 - 2012-10-02
+
+  * Callbacks (after_publish, before_publish) (lucas renan) - resolve issue #4
 
 ## 0.1.0 - 2012-09-04
 
