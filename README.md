@@ -45,3 +45,25 @@ Post.published.count  #1
 
 p.publication_status #Date.today or 'draft'
 ```
+
+## Callbacks (before_publish and after_publish)
+
+``` ruby
+class Product
+  include Mongoid::Document
+  include Mongoid::Publish
+
+  field :name
+
+  before_publish do
+    puts "before publish"
+  end
+
+  after_publish
+    puts "after publish"
+  end
+end
+
+product = Product.new
+product.publish! #=> before publish after publish
+```
