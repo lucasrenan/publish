@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
   gem.platform      = Gem::Platform::RUBY
 
 
-  gem.add_dependency "mongoid", ">= 3.0.0"
+  gem.add_dependency "mongoid", ">= 3.1.0"
 
   gem.add_development_dependency "rails",              "~> 3.2.0"
   gem.add_development_dependency "rake",               "~> 10.0"
