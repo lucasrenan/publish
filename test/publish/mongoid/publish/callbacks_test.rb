@@ -4,7 +4,7 @@ class CallbacksTest < ActiveSupport::TestCase
 
   setup do
     @klass = Product
-    @product  = FactoryGirl.build(:product)
+    @product  = build(:product)
   end
 
   test "should includes the before_publish callback" do

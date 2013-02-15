@@ -3,7 +3,7 @@ require File.expand_path("../../../test_helper", __FILE__)
 class PublishTest < ActiveSupport::TestCase
 
   setup do
-    @post = FactoryGirl.create(:post)
+    @post = create(:post)
   end
 
   test "should create published at field" do
@@ -17,7 +17,7 @@ class PublishTest < ActiveSupport::TestCase
   end
 
   test "should be unpublished if published at is not setted" do
-    post = FactoryGirl.build(:post)
+    post = build(:post)
     post.published = true
 
     assert_equal post.published?, false
@@ -33,21 +33,21 @@ class PublishTest < ActiveSupport::TestCase
   end
 
   test "should return published posts" do
-    2.times { FactoryGirl.create(:post, :published => true) }
+    2.times { create(:post, :published => true) }
 
     assert_equal Post.published.size, 2
   end
 
   test "should return orderly published posts" do
-    FactoryGirl.create(:post, :title => "2", :published => true, :published_at => 1.month.ago)
-    FactoryGirl.create(:post, :title => "3", :published => true, :published_at => 1.year.ago)
-    FactoryGirl.create(:post, :title => "1", :published => true, :published_at => 1.day.ago)
+    create(:post, :title => "2", :published => true, :published_at => 1.month.ago)
+    create(:post, :title => "3", :published => true, :published_at => 1.year.ago)
+    create(:post, :title => "1", :published => true, :published_at => 1.day.ago)
 
     assert_equal Post.published_and_orderly.map(&:title), ["1", "2", "3"]
   end
 
   test "should publish a post" do
-    post = FactoryGirl.build(:post)
+    post = build(:post)
     post.publish!
     post.reload
 
@@ -56,8 +56,8 @@ class PublishTest < ActiveSupport::TestCase
   end
   
   test "should concat with criteria methods" do
-    FactoryGirl.create(:post, :published => true, :title => "normal post")
-    FactoryGirl.create(:post, :published => true, :title => "my special post")
+    create(:post, :published => true, :title => "normal post")
+    create(:post, :published => true, :title => "my special post")
     
     assert_equal Post.where(:title => /special/).published.count, 1
     assert_equal Post.published.where(:title => /special/).count, 1

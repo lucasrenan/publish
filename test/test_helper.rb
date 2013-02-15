@@ -20,6 +20,8 @@ Rails.backtrace_cleaner.remove_silencers!
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
 class ActiveSupport::TestCase
+  include FactoryGirl::Syntax::Methods
+
   teardown do
     Mongoid.default_session.collections.select {|c| c.name !~ /system/ }.each(&:drop)
   end
