@@ -2,9 +2,13 @@
 
 ## Next Release (branch: master)
 
-### Improvements
+  * Create a todo list
 
-* Now supports mongoid master
+## 0.1.2 - 2013-03-04
+
+  * Define scopes as lazy to prevent it from using class loading date instead of scope calling date (it will be default in rails 4)
+
+  * Now supports mongoid master
 
 ## 0.1.1 - 2012-10-02
 
