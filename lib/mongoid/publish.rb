@@ -13,7 +13,7 @@ module Mongoid
     end
 
     include Mongoid::Publish::Callbacks
-
+    
     def published?
       return true if self.published && self.published_at && self.published_at <= Date.today
       false
@@ -35,6 +35,9 @@ module Mongoid
     end
 
     module ClassMethods
+      def list(includes_drafts=true)
+        includes_drafts ? all : published
+      end
     end
 
   end

@@ -3,7 +3,7 @@ require File.expand_path("../../../test_helper", __FILE__)
 class PublishTest < ActiveSupport::TestCase
 
   setup do
-    @post = create(:post)
+    @post = create(:post, :published => false)
   end
 
   test "should create published at field" do
@@ -72,5 +72,18 @@ class PublishTest < ActiveSupport::TestCase
     
     assert_equal Post.last.publication_status, Date.today
   end
+  
+  test "should list posts excluding drafts" do
+    3.times { create(:post, :published => true) }
+    create(:post, :published => false)
 
+    assert_equal 3, Post.list(false).count
+  end
+
+  test "should list posts including drafts" do
+    4.times { create(:post, :published => true) }
+    create(:post, :published => false)
+
+    assert_equal 6, Post.list(true).count
+  end
 end
