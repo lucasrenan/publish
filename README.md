@@ -46,6 +46,14 @@ Post.published.count  #1
 p.publication_status #Date.today or 'draft'
 ```
 
+Filtering
+
+``` ruby
+Post.published # scope - where(:published => true, :published_at.lte => Date.today)
+
+Post.list(false) # scope - criteria.published
+```
+
 ## Callbacks (before_publish and after_publish)
 
 ``` ruby
