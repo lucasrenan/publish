@@ -2,7 +2,7 @@
 
 ## Next Release (branch: master)
 
-  * Create a todo list
+  * Removes scope `published_and_orderly`
 
 ## 0.2.0 - 2013-03-22
 
