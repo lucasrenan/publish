@@ -1,3 +1,6 @@
+require 'coveralls'
+Coveralls.wear!
+
 #generates coverage report
 require 'simplecov'
 SimpleCov.start('rails') do
