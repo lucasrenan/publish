@@ -1,4 +1,4 @@
-# Publish [![Build Status](https://secure.travis-ci.org/lucasrenan/publish.png?branch=master)](http://travis-ci.org/lucasrenan/publish) [![Build Status](https://gemnasium.com/lucasrenan/publish.png)](http://gemnasium.com/lucasrenan/publish) [![Code Climate](https://codeclimate.com/github/lucasrenan/publish.png)](https://codeclimate.com/github/lucasrenan/publish)
+# Publish [![Build Status](https://secure.travis-ci.org/lucasrenan/publish.png?branch=master)](http://travis-ci.org/lucasrenan/publish) [![Build Status](https://gemnasium.com/lucasrenan/publish.png)](http://gemnasium.com/lucasrenan/publish) [![Code Climate](https://codeclimate.com/github/lucasrenan/publish.png)](https://codeclimate.com/github/lucasrenan/publish) [![Coverage Status](https://coveralls.io/repos/lucasrenan/publish/badge.png?branch=master)](https://coveralls.io/r/lucasrenan/publish)
 
 
 Publish is a gem that adds the common functionality to publish (or set as draft) a document using Mongoid.
