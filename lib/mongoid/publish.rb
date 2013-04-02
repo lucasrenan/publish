@@ -3,10 +3,10 @@ module Mongoid
     extend ActiveSupport::Concern
 
     included do
-      field :published_at, :type => Date
+      field :published_at, :type => Time
       field :published,    :type => Boolean, :default => false
 
-      scope :published, -> { where(:published => true, :published_at.lte => Date.today) }
+      scope :published, -> { where(:published => true, :published_at.lte => Time.now) }
 
       before_save :set_published_at
     end
@@ -14,13 +14,13 @@ module Mongoid
     include Mongoid::Publish::Callbacks
 
     def published?
-      return true if self.published && self.published_at && self.published_at <= Date.today
+      return true if self.published && self.published_at && self.published_at <= Time.now
       false
     end
 
     def publish!
       self.published    = true
-      self.published_at = Date.today
+      self.published_at = Time.now
       self.save
     end
 
@@ -30,7 +30,7 @@ module Mongoid
 
     private
     def set_published_at
-      self.published_at = Date.today if self.published && self.published_at.nil?
+      self.published_at = Time.now if self.published && self.published_at.nil?
     end
 
     module ClassMethods
