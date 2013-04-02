@@ -5,4 +5,6 @@ gem 'mongoid', github: 'mongoid/mongoid'
 gem 'factory_girl_rails', '~> 4.2.0'
 gem 'rails',              '>= 4.0.0.beta1'
 
+gem 'coveralls', require: false
+
 gemspec path: '../'
