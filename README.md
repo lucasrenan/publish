@@ -8,7 +8,7 @@ Publish is a gem that adds the common functionality to publish (or set as draft)
 Add to Gemfile
 
 ``` ruby
-gem "publish", "~> 0.2.0"
+gem "publish", "~> 0.3.0"
 ```
 
 Then run
@@ -31,25 +31,25 @@ class Post
   field :text
 end
 
-Post.published.count  #0
+Post.published.count  # 0
 
 p = Post.new
-p.published?    #false
-p.published_at  #nil
+p.published?    # false
+p.published_at  # nil
 
-p.publish! #p.published = true
+p.publish! # p.published = true
 
-p.published?    #true
+p.published?    # true
 
-Post.published.count  #1
+Post.published.count  # 1
 
-p.publication_status #Date.today or 'draft'
+p.publication_status # Time.now or 'draft'
 ```
 
 Filtering
 
 ``` ruby
-Post.published # scope - where(:published => true, :published_at.lte => Date.today)
+Post.published # scope - where(:published => true, :published_at.lte => Time.now)
 
 Post.list(false) # scope - criteria.published
 ```

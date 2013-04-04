@@ -2,6 +2,12 @@
 
 ## Next Release (branch: master)
 
+  * TODO
+
+## 0.3.0 - 2013-04-04
+
+  * Changes published_at field type from Date to Time
+
   * Removes scope `published_and_orderly`
 
 ## 0.2.0 - 2013-03-22
