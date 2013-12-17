@@ -8,7 +8,7 @@ Publish is a gem that adds the common functionality to publish (or set as draft)
 Add to Gemfile
 
 ``` ruby
-gem "publish", "~> 0.3.0"
+gem "publish", "~> 0.4.0"
 ```
 
 Then run

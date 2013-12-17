@@ -1,8 +1,12 @@
 # Publish Change History
 
-## Next Release (branch: master)
+## Next Release
 
   * TODO
+
+## 0.4.0 - 2013-12-17
+
+  * Tested against rails 4 and mongoid master only
 
 ## 0.3.0 - 2013-04-04
 
