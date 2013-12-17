@@ -2,7 +2,8 @@ source "http://rubygems.org"
 
 gemspec
 
-gem "factory_girl_rails", "~> 4.2.0"
-gem "colorific",          "~> 1.0.2"
+gem "mongoid", github: "mongoid/mongoid"
+
+gem "factory_girl_rails", "~> 4.3.0"
 
 gem "coveralls", require: false
