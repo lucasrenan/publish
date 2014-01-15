@@ -44,6 +44,15 @@ module Mongoid
       def list(includes_drafts=true)
         includes_drafts ? all : published
       end
+
+      def publish_all!
+        self.update_all(published: true, published_at: Time.now)
+      end
+
+      def unpublish_all!
+        self.update_all(published: false, published_at: nil)
+      end
+
     end
 
   end
