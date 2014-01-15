@@ -2,7 +2,7 @@ module Mongoid
   module Publish
     module Callbacks
       extend ActiveSupport::Concern
-      
+
       CALLBACKS = [
         :after_publish,
         :before_publish
@@ -12,10 +12,16 @@ module Mongoid
         extend ActiveModel::Callbacks
 
         define_model_callbacks :publish
+        define_model_callbacks :unpublish, only: [:before, :after]
 
-        def publish!          
+        def publish!
           run_callbacks(:publish) { super }
         end
+
+        def unpublish!
+          run_callbacks(:unpublish) { super }
+        end
+
       end
     end
   end
