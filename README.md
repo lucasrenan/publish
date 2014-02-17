@@ -83,3 +83,8 @@ product.publish! #=> before publish after publish
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+### Contributors
+Thanks for all contributors! Check them all at:
+
+https://github.com/lucasrenan/publish/graphs/contributors
