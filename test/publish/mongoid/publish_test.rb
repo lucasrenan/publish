@@ -88,4 +88,28 @@ class PublishTest < ActiveSupport::TestCase
 
     assert_equal 6, Post.list(true).count
   end
+
+  test "should unpublish a post calling unpublish! method" do
+    post = create(:post, published: true, published_at: Time.now)
+    post.unpublish!
+
+    assert_equal post.published?, false
+  end
+
+  test "should publish all posts" do
+    2.times { create(:post) }
+    Post.publish_all!
+
+    assert_equal 3, Post.published.count
+    assert_equal 0, Post.unpublished.count
+  end
+
+  test "should unpublish all posts" do
+    2.times { create(:post, published: true, published_at: Time.now) }
+    Post.unpublish_all!
+
+    assert_equal 0, Post.published.count
+    assert_equal 3, Post.unpublished.count
+  end
+
 end
