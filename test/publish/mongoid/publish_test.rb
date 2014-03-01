@@ -94,6 +94,5 @@ class PublishTest < ActiveSupport::TestCase
     post.unpublish!
 
     assert_equal post.published?, false
-    assert_equal post.published_at, nil
   end
 end
