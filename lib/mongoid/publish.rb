@@ -7,6 +7,7 @@ module Mongoid
       field :published,    :type => Boolean, :default => false
 
       scope :published, -> { where(:published => true, :published_at.lte => Time.now) }
+      scope :draft, -> { where(:published => false) }
 
       before_save :set_published_at
     end
@@ -21,6 +22,12 @@ module Mongoid
     def publish!
       self.published    = true
       self.published_at = Time.now
+      self.save
+    end
+    
+    def unpublish!
+      self.published    = false
+      self.published_at = nil
       self.save
     end
 
